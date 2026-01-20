@@ -215,7 +215,7 @@
     nav.innerHTML = `
         <div class="navbar-logo">
             <img src="Images/icon.png" alt="DC UD Logo">
-            <span class="logo-text" id="cookdoor-typewriter"> DC UD</span>
+            <span class="logo-text" id="cookdoor-typewriter"> DCUD</span>
         </div>
         <div class="navbar-menu">
             <a href="index.html" class="nav-item"><span>Top Achiever</span></a>
