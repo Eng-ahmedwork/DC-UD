@@ -14,7 +14,7 @@
             position: relative;
             min-height: 400px;
         }
-
+        
         #opt1::before {
             content: "";
             position: absolute;
@@ -31,12 +31,12 @@
             z-index: 0;
             pointer-events: none;
         }
-
+        
         #opt1>* {
             position: relative;
             z-index: 1;
         }
-
+        
         #image1 {
             position: relative;
             width: 100%;
@@ -44,7 +44,7 @@
             overflow: hidden;
             background: #000;
         }
-
+        
         .slideshow-image {
             position: absolute;
             top: 0;
@@ -56,7 +56,7 @@
             transition: opacity 1.5s ease-in-out;
             z-index: 1;
         }
-
+        
         .slideshow-image.active {
             opacity: 1;
             z-index: 2;
@@ -68,11 +68,11 @@
     <!-- sections  -->
     <script>
         // sssssssssssections
-        document.querySelectorAll('.faq-question').forEach(function (btn) {
-            btn.addEventListener('click', function () {
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
                 var item = btn.parentElement;
                 // إغلاق كل العناصر الأخرى إذا أردت فتح واحد فقط في كل مرة
-                document.querySelectorAll('.faq-item').forEach(function (other) {
+                document.querySelectorAll('.faq-item').forEach(function(other) {
                     if (other !== item) other.classList.remove('active');
                 });
                 item.classList.toggle('active');
@@ -84,17 +84,22 @@
     <!-- smallsection -->
     <script>
         // كود تبويبات ديناميكي لكل سكشن متعدد الأبواب
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelectorAll('.tabs').forEach(function (tabsRoot) {
-                tabsRoot.querySelectorAll('.tab-btn').forEach(function (btn) {
-                    btn.addEventListener('click', function () {
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.tabs').forEach(function(tabsRoot) {
+                tabsRoot.querySelectorAll('.tab-btn').forEach(function(btn) {
+                    btn.addEventListener('click', function() {
                         var target = btn.getAttribute('data-tab');
                         // تفعيل الزر
-                        tabsRoot.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+                        tabsRoot.querySelectorAll('.tab-btn').forEach(function(b) {
+                            b.classList.remove('active');
+                            b.setAttribute('aria-selected', 'false');
+                        });
                         btn.classList.add('active');
                         btn.setAttribute('aria-selected', 'true');
                         // إظهار اللوحة المناسبة
-                        tabsRoot.querySelectorAll('.tab-panel').forEach(function (p) { p.classList.remove('active'); });
+                        tabsRoot.querySelectorAll('.tab-panel').forEach(function(p) {
+                            p.classList.remove('active');
+                        });
                         var panel = tabsRoot.querySelector('#' + target);
                         if (panel) panel.classList.add('active');
                     });
@@ -121,7 +126,7 @@
     <script src="JavaScript/Hylightcard.js" defer></script>
     <script src="JavaScript/searchto any table(id).js" defer></script>
     <script>
-        window.addEventListener('load', function () {
+        window.addEventListener('load', function() {
             const images = document.querySelectorAll('#image1 .slideshow-image');
             let currentIndex = 0;
 
@@ -191,10 +196,8 @@
                 <!-- مربع البحث عن الأسئلة (منفصل عن سكشن آخر) -->
                 <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 28px;">
                     <div style="position: relative; width: 380px; max-width: 90%;">
-                        <input id="faq2-search" type="text" placeholder="ابحث في الأسئلة..."
-                            style="width: 100%; padding: 14px 44px 14px 16px; font-size: 1.5em; border-radius: 30px; border: 1.5px solid var(--nav-accent); box-shadow: 0 4px 18px rgba(0,0,0,0.2); outline: none; transition: border 0.2s, box-shadow 0.2s; background: #fff; color: #222; text-align: right;">
-                        <span
-                            style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--nav-accent); font-size: 1.3em; pointer-events: none;">
+                        <input id="faq2-search" type="text" placeholder="ابحث في الأسئلة..." style="width: 100%; padding: 14px 44px 14px 16px; font-size: 1.5em; border-radius: 30px; border: 1.5px solid var(--nav-accent); box-shadow: 0 4px 18px rgba(0,0,0,0.2); outline: none; transition: border 0.2s, box-shadow 0.2s; background: #fff; color: #222; text-align: right;">
+                        <span style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--nav-accent); font-size: 1.3em; pointer-events: none;">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="11" cy="11" r="7" stroke="var(--nav-accent)" stroke-width="2" />
@@ -219,7 +222,7 @@
                                 padding: 5px 2px;
                                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                             }
-
+                            
                             .faq-detail-block {
                                 background: #F8FAFC;
                                 border-right: 4px solid var(--nav-accent);
@@ -230,13 +233,13 @@
                                 position: relative;
                                 overflow: hidden;
                             }
-
+                            
                             .faq-detail-block:hover {
                                 background: #ffffff;
                                 transform: translateY(-3px);
                                 box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
                             }
-
+                            
                             .faq-block-header {
                                 display: flex;
                                 align-items: center;
@@ -246,7 +249,7 @@
                                 border-bottom: 1px solid rgba(139, 92, 246, 0.1);
                                 padding-bottom: 6px;
                             }
-
+                            
                             .faq-block-icon {
                                 background: rgba(139, 92, 246, 0.1);
                                 width: 32px;
@@ -258,20 +261,20 @@
                                 color: var(--nav-accent);
                                 font-size: 1em;
                             }
-
+                            
                             .faq-block-title {
                                 font-weight: 800;
                                 font-size: 1.05em;
                                 color: #1F2937;
                             }
-
+                            
                             .faq-block-content {
                                 color: #4B5563;
                                 line-height: 1.6;
                                 font-size: 0.95em;
                                 padding-right: 5px;
                             }
-
+                            
                             .faq-script-text {
                                 background: #fff;
                                 border: 1px dashed #A78BFA;
@@ -281,7 +284,7 @@
                                 margin-top: 6px;
                                 font-style: italic;
                             }
-
+                            
                             .status-badge {
                                 display: inline-flex;
                                 align-items: center;
@@ -293,7 +296,7 @@
                                 font-weight: 700;
                                 border: 1px solid #A7F3D0;
                             }
-
+                            
                             .status-dot {
                                 width: 8px;
                                 height: 8px;
@@ -311,11 +314,9 @@
                                     <div class="faq-block-title">الرد على العميل</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    نوضح نبذة كاملة عن المشروع، ثم يتم إخبار العميل بأنه سيتم تقديم طلب للمبيعات
-                                    والتواصل معه على مدار اليوم.
+                                    نوضح نبذة كاملة عن المشروع، ثم يتم إخبار العميل بأنه سيتم تقديم طلب للمبيعات والتواصل معه على مدار اليوم.
                                     <div class="faq-script-text">
-                                        "أوضح لحضرتك يا أستاذ (.....) الإجراء اللي بيتم من خلالي حالياً هو تقديم طلب
-                                        لإدارة المبيعات اللي هتتواصل مع حضرتك على مدار اليوم لتوضيح كافة التفاصيل"
+                                        "أوضح لحضرتك يا أستاذ (.....) الإجراء اللي بيتم من خلالي حالياً هو تقديم طلب لإدارة المبيعات اللي هتتواصل مع حضرتك على مدار اليوم لتوضيح كافة التفاصيل"
                                     </div>
                                 </div>
                             </div>
@@ -329,13 +330,11 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px;">
-                                            <i class="fas fa-check"
-                                                style="color: var(--nav-accent); margin-left: 5px;"></i>
+                                            <i class="fas fa-check" style="color: var(--nav-accent); margin-left: 5px;"></i>
                                             <strong>Lead:</strong> للفرع (في حالة عميل جديد)
                                         </li>
                                         <li>
-                                            <i class="fas fa-check"
-                                                style="color: var(--nav-accent); margin-left: 5px;"></i>
+                                            <i class="fas fa-check" style="color: var(--nav-accent); margin-left: 5px;"></i>
                                             <strong>Ticket & Buyer:</strong> (في حالة عميل له بيانات مسجلة)
                                         </li>
                                     </ul>
@@ -372,11 +371,9 @@
                                     <div class="faq-block-title">الرد على العميل</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    نقوم بتوضيح رقم خدمة العملاء لشركات التشغيل ومواعيد عملهم على حسب كل مشروع والشركة
-                                    الخاصة به.
+                                    نقوم بتوضيح رقم خدمة العملاء لشركات التشغيل ومواعيد عملهم على حسب كل مشروع والشركة الخاصة به.
                                     <div class="faq-script-text">
-                                        "تمام يا أستاذ (.....) الإجراء اللي بيتم من خلالي حالياً إني هوضح لحضرتك رقم
-                                        الشركة المسؤولة عن الأمر اللي حضرتك بتواجهه حالياً.. ممكن حضرتك تكتب الرقم؟"
+                                        "تمام يا أستاذ (.....) الإجراء اللي بيتم من خلالي حالياً إني هوضح لحضرتك رقم الشركة المسؤولة عن الأمر اللي حضرتك بتواجهه حالياً.. ممكن حضرتك تكتب الرقم؟"
                                     </div>
                                 </div>
                             </div>
@@ -390,12 +387,10 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i>
-                                            Customer Service
+                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i> Customer Service
                                         </li>
                                     </ul>
                                 </div>
@@ -408,10 +403,8 @@
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
+                                    <div class="status-badge" style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
+                                        <div class="status-dot" style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
                                         Closed
                                     </div>
                                 </div>
@@ -435,8 +428,7 @@
                                 <div class="faq-block-content">
                                     نوضح انه سيتم تقديم طلب للادارة المختصة والتواصل في خلال يومين عمل.
                                     <div class="faq-script-text">
-                                        "أوضح لحضرتك يا أستاذ (.....) إن الإجراء اللي بيتم من خلالي حالياً هو تسجيل طلب
-                                        للإدارة المختصة واللي بدورهم هيتواصلوا مع حضرتك في خلال يومين عمل"
+                                        "أوضح لحضرتك يا أستاذ (.....) إن الإجراء اللي بيتم من خلالي حالياً هو تسجيل طلب للإدارة المختصة واللي بدورهم هيتواصلوا مع حضرتك في خلال يومين عمل"
                                     </div>
                                 </div>
                             </div>
@@ -448,13 +440,10 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-money-check-alt"
-                                                style="color: #dc2626; margin-left: 5px;"></i>
-                                            COLLECTION
+                                            <i class="fas fa-money-check-alt" style="color: #dc2626; margin-left: 5px;"></i> COLLECTION
                                         </li>
                                     </ul>
                                 </div>
@@ -490,11 +479,9 @@
                                     <div class="faq-block-title">الرد على العميل</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    نوضح انه سيتم تقديم طلب للادارة المختصة والتواصل في خلال يومين عمل بعد تأكيد استفسار
-                                    العميل يتم توضيح.
+                                    نوضح انه سيتم تقديم طلب للادارة المختصة والتواصل في خلال يومين عمل بعد تأكيد استفسار العميل يتم توضيح.
                                     <div class="faq-script-text">
-                                        "أوضح لحضرتك يا أستاذ (.....) إن الإجراء اللي بيتم من خلالي حالياً هو تسجيل طلب
-                                        للإدارة المختصة واللي بدورهم هيتواصلوا مع حضرتك في خلال يومين عمل"
+                                        "أوضح لحضرتك يا أستاذ (.....) إن الإجراء اللي بيتم من خلالي حالياً هو تسجيل طلب للإدارة المختصة واللي بدورهم هيتواصلوا مع حضرتك في خلال يومين عمل"
                                     </div>
                                 </div>
                             </div>
@@ -506,12 +493,10 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i>
-                                            Customer Service
+                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i> Customer Service
                                         </li>
                                     </ul>
                                 </div>
@@ -546,12 +531,9 @@
                                     <div class="faq-block-title">الرد على العميل</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    نوضح الاوراق للمالك ونخبره انه بعد تجهيز الاوراق يتوجه بها للفرع لتقديم طلب التنازل.
-                                    بالنسبة لمصاريف التنازل نوضح انه سيتم تقديم طلب للادارة المختصة.
+                                    نوضح الاوراق للمالك ونخبره انه بعد تجهيز الاوراق يتوجه بها للفرع لتقديم طلب التنازل. بالنسبة لمصاريف التنازل نوضح انه سيتم تقديم طلب للادارة المختصة.
                                     <div class="faq-script-text">
-                                        "أوضح لحضرتك يا أستاذ (.....) إن بالنسبة لمصاريف التنازل الإجراء اللي بيتم من
-                                        خلالي حالياً هو تسجيل طلب للإدارة المختصة واللي بدورهم هيتواصلوا مع حضرتك في
-                                        خلال يومين عمل"
+                                        "أوضح لحضرتك يا أستاذ (.....) إن بالنسبة لمصاريف التنازل الإجراء اللي بيتم من خلالي حالياً هو تسجيل طلب للإدارة المختصة واللي بدورهم هيتواصلوا مع حضرتك في خلال يومين عمل"
                                     </div>
                                 </div>
                             </div>
@@ -563,12 +545,10 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i>
-                                            Customer Service
+                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i> Customer Service
                                         </li>
                                     </ul>
                                 </div>
@@ -605,8 +585,7 @@
                                 <div class="faq-block-content">
                                     نوضح ارقام دلتا دريم ومواعيد العمل.
                                     <div class="faq-script-text">
-                                        "تمام يا أستاذ (.....) الإجراء اللي بيتم من خلالي حالياً إني هوضح لحضرتك رقم
-                                        الشركة المسؤولة عن الأمر اللي حضرتك بتواجهه حالياً.. ممكن حضرتك تكتب الرقم؟"
+                                        "تمام يا أستاذ (.....) الإجراء اللي بيتم من خلالي حالياً إني هوضح لحضرتك رقم الشركة المسؤولة عن الأمر اللي حضرتك بتواجهه حالياً.. ممكن حضرتك تكتب الرقم؟"
                                     </div>
                                 </div>
                             </div>
@@ -618,16 +597,13 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-building" style="color: #dc2626; margin-left: 5px;"></i>
-                                            للفرع lead
+                                            <i class="fas fa-building" style="color: #dc2626; margin-left: 5px;"></i> للفرع lead
                                         </li>
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i>
-                                            Customer Service
+                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i> Customer Service
                                         </li>
                                     </ul>
                                 </div>
@@ -638,10 +614,8 @@
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
+                                    <div class="status-badge" style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
+                                        <div class="status-dot" style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
                                         Closed
                                     </div>
                                 </div>
@@ -666,9 +640,7 @@
                                 <div class="faq-block-content">
                                     نوضح ارقام كونسقورة ومواعيد العمل.
                                     <div class="faq-script-text">
-                                        "تمام يا أستاذ (.....) الإجراء اللي بيتم من خلالي حالياً إني هوضح لحضرتك رقم
-                                        الشركة المسؤولة عن الأمر اللي حضرتك بتواجهه حالياً في مشكلة الكهرباء.. ممكن أوضح
-                                        الرقم لحضرتك؟"
+                                        "تمام يا أستاذ (.....) الإجراء اللي بيتم من خلالي حالياً إني هوضح لحضرتك رقم الشركة المسؤولة عن الأمر اللي حضرتك بتواجهه حالياً في مشكلة الكهرباء.. ممكن أوضح الرقم لحضرتك؟"
                                     </div>
                                 </div>
                             </div>
@@ -680,12 +652,10 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i>
-                                            Customer Service
+                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i> Customer Service
                                         </li>
                                     </ul>
                                 </div>
@@ -696,10 +666,8 @@
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
+                                    <div class="status-badge" style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
+                                        <div class="status-dot" style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
                                         Closed
                                     </div>
                                 </div>
@@ -722,9 +690,7 @@
                                     <div class="faq-block-title">الرد على العميل</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    نوضح انه سيتم تقديم طلب للادارة وان كان هناك وظائف او اهتمام من الشركة بالتعاقد سيتم
-                                    التواصل من قبل مسؤول من الادارة وان لم يكن متاح وظائف او لا يوجد اهتمام بالتعاقد لن
-                                    يتم التواصل للاسف.
+                                    نوضح انه سيتم تقديم طلب للادارة وان كان هناك وظائف او اهتمام من الشركة بالتعاقد سيتم التواصل من قبل مسؤول من الادارة وان لم يكن متاح وظائف او لا يوجد اهتمام بالتعاقد لن يتم التواصل للاسف.
                                 </div>
                             </div>
                             <div class="faq-detail-block">
@@ -735,13 +701,11 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-building" style="color: #dc2626; margin-left: 5px;"></i>
-                                            lead و HQ
+                                            <i class="fas fa-building" style="color: #dc2626; margin-left: 5px;"></i> lead و HQ
                                         </li>
                                         <div style="font-weight: bold; text-align: center; margin: 4px 0;">أو</div>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET و HQ
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET و HQ
                                         </li>
                                     </ul>
                                 </div>
@@ -777,13 +741,9 @@
                                 </div>
                                 <div class="faq-block-content">
                                     <ul style="list-style-type: decimal; margin-right: 20px; padding: 0;">
-                                        <li style="margin-bottom: 8px;">ان كان الرقم المراد تفعيله او اضافته من ضمن
-                                            البيانات يتم التوضيح ان التفعيل او اضافة الرقم سيكون في خلال 24 ساعة من
-                                            تواصله معنا.</li>
-                                        <li style="margin-bottom: 8px;">ان لم يكن الرقم من ضمن البيانات سيتم اخباره انه
-                                            سيكون في خلال يومين عمل.</li>
-                                        <li>اضافة الوحدة لعميل يمتلك اكثر من وحدة يكون في خلال 24 ساعة من تواصله بنا
-                                            ونسأل العميل عن الرقم المفعل به الابلكيشن.</li>
+                                        <li style="margin-bottom: 8px;">ان كان الرقم المراد تفعيله او اضافته من ضمن البيانات يتم التوضيح ان التفعيل او اضافة الرقم سيكون في خلال 24 ساعة من تواصله معنا.</li>
+                                        <li style="margin-bottom: 8px;">ان لم يكن الرقم من ضمن البيانات سيتم اخباره انه سيكون في خلال يومين عمل.</li>
+                                        <li>اضافة الوحدة لعميل يمتلك اكثر من وحدة يكون في خلال 24 ساعة من تواصله بنا ونسأل العميل عن الرقم المفعل به الابلكيشن.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -795,12 +755,10 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i>
-                                            Customer Service
+                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i> Customer Service
                                         </li>
                                     </ul>
                                 </div>
@@ -837,8 +795,7 @@
                                 <div class="faq-block-content">
                                     نوضح انه سيتم تقديم طلب للادارة المختصة والتواصل في خلال يومين عمل.
                                     <div class="faq-script-text">
-                                        "أوضح لحضرتك يا أستاذ (.....) إن الإجراء اللي بيتم من خلالي حالياً هو تسجيل طلب
-                                        للإدارة المختصة واللي بدورهم هيتواصلوا مع حضرتك في خلال يومين عمل"
+                                        "أوضح لحضرتك يا أستاذ (.....) إن الإجراء اللي بيتم من خلالي حالياً هو تسجيل طلب للإدارة المختصة واللي بدورهم هيتواصلوا مع حضرتك في خلال يومين عمل"
                                     </div>
                                 </div>
                             </div>
@@ -850,12 +807,10 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i>
-                                            Customer Service
+                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i> Customer Service
                                         </li>
                                     </ul>
                                 </div>
@@ -892,8 +847,7 @@
                                 <div class="faq-block-content">
                                     نوضح انه سيتم تقديم طلب للادارة والتواصل في خلال يومين عمل.
                                     <div class="faq-script-text">
-                                        "أوضح لحضرتك يا أستاذ (.....) إن الإجراء اللي بيتم من خلالي حالياً هو تسجيل طلب
-                                        للإدارة المختصة واللي بدورهم هيتواصلوا مع حضرتك في خلال يومين عمل"
+                                        "أوضح لحضرتك يا أستاذ (.....) إن الإجراء اللي بيتم من خلالي حالياً هو تسجيل طلب للإدارة المختصة واللي بدورهم هيتواصلوا مع حضرتك في خلال يومين عمل"
                                     </div>
                                 </div>
                             </div>
@@ -905,13 +859,11 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-building" style="color: #dc2626; margin-left: 5px;"></i>
-                                            lead و HQ
+                                            <i class="fas fa-building" style="color: #dc2626; margin-left: 5px;"></i> lead و Buyer
                                         </li>
                                         <div style="font-weight: bold; text-align: center; margin: 4px 0;">أو</div>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET و HQ
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET و Buyer
                                         </li>
                                     </ul>
                                 </div>
@@ -946,11 +898,8 @@
                                     <div class="faq-block-title">الرد على العميل</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    نوضح انه غير متاح زيارات في الوقت الحالي نظرا لتواجد اعمال انشاء وذلك حرصا من الشركة
-                                    علي سلامة الملاك.
-                                    <br><br>
-                                    وانه يمكنه ان يتابع تطورات المشروع ومراحل الانشاء من خلال الصفحة الرسمية للشركة علي
-                                    السوشيال ميديا واسم الصفحة هو:
+                                    نوضح انه غير متاح زيارات في الوقت الحالي نظرا لتواجد اعمال انشاء وذلك حرصا من الشركة علي سلامة الملاك.
+                                    <br><br> وانه يمكنه ان يتابع تطورات المشروع ومراحل الانشاء من خلال الصفحة الرسمية للشركة علي السوشيال ميديا واسم الصفحة هو:
                                     <br>
                                     <strong style="color: var(--nav-accent);">Delta Capital For Urban
                                         Development</strong>
@@ -964,12 +913,10 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i>
-                                            Customer Service
+                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i> Customer Service
                                         </li>
                                     </ul>
                                 </div>
@@ -980,10 +927,8 @@
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
+                                    <div class="status-badge" style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
+                                        <div class="status-dot" style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
                                         Closed
                                     </div>
                                 </div>
@@ -1006,18 +951,12 @@
                                     <div class="faq-block-title">الرد على العميل</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    نوضح انه غير متاح في الوقت الحالي لان المشروع بالكامل مازال تحت الانشاء ولم يتم
-                                    استلام اي وحدة بعد.
-                                    <br>
-                                    - اما بالنسبة للتسليمات نوضح ان الشركة ملتزمة بفترة التسليم المتواجدة في التعاقد.
+                                    نوضح انه غير متاح في الوقت الحالي لان المشروع بالكامل مازال تحت الانشاء ولم يتم استلام اي وحدة بعد.
+                                    <br> - اما بالنسبة للتسليمات نوضح ان الشركة ملتزمة بفترة التسليم المتواجدة في التعاقد.
                                     <div class="faq-script-text">
-                                        "أوضح لحضرتك يا أستاذ (.....) غير متاح اي تنازلات لان المشروع بالكامل مازال تحت
-                                        الانشاء ومفيش اي وحدات تم تسليمها."
-                                        <br><br>
-                                        "بالنسبة للتسليمات.. التسليم يا أستاذ (.....) بيكون مدرج في التعاقد حضرتك
-                                        هانستلم بعد اد ايه ولو حضرتك حابب تعرف بالظبط معاد التسليم فانا من خلالي هاسجل
-                                        لحضرتك طلب للادارة المختصة ومسئول هايوضح لحضرتك الجزء الخاص بالتسليمات في خلال
-                                        يومين عمل."
+                                        "أوضح لحضرتك يا أستاذ (.....) غير متاح اي تنازلات لان المشروع بالكامل مازال تحت الانشاء ومفيش اي وحدات تم تسليمها."
+                                        <br><br> "بالنسبة للتسليمات.. التسليم يا أستاذ (.....) بيكون مدرج في التعاقد حضرتك هانستلم بعد اد ايه ولو حضرتك حابب تعرف بالظبط معاد التسليم فانا من خلالي هاسجل لحضرتك طلب للادارة المختصة ومسئول هايوضح لحضرتك الجزء
+                                        الخاص بالتسليمات في خلال يومين عمل."
                                     </div>
                                 </div>
                             </div>
@@ -1029,12 +968,10 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i>
-                                            Customer Service
+                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i> Customer Service
                                         </li>
                                     </ul>
                                 </div>
@@ -1071,9 +1008,7 @@
                                 <div class="faq-block-content">
                                     نوضح رقم خدمة عملاء شركات التشغيل ومواعيد عملهم.
                                     <div class="faq-script-text">
-                                        "تمام يا أستاذ (.....) الإجراء اللي بيتم من خلالي حالياً إني هوضح لحضرتك رقم
-                                        الشركة المسؤولة عن تصاريح الدخول.. ممكن حضرتك تكتب الرقم معايا؟ مواعيد العمل
-                                        بتكون (.........)"
+                                        "تمام يا أستاذ (.....) الإجراء اللي بيتم من خلالي حالياً إني هوضح لحضرتك رقم الشركة المسؤولة عن تصاريح الدخول.. ممكن حضرتك تكتب الرقم معايا؟ مواعيد العمل بتكون (.........)"
                                     </div>
                                 </div>
                             </div>
@@ -1085,12 +1020,10 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i>
-                                            Customer Service
+                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i> Customer Service
                                         </li>
                                     </ul>
                                 </div>
@@ -1101,10 +1034,8 @@
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
+                                    <div class="status-badge" style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
+                                        <div class="status-dot" style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
                                         Closed
                                     </div>
                                 </div>
@@ -1129,9 +1060,7 @@
                                 <div class="faq-block-content">
                                     نوضح رقم خدمة عملاء شركات التشغيل ومواعيد عملهم.
                                     <div class="faq-script-text">
-                                        "تمام يا أستاذ (.....) الإجراء اللي بيتم من خلالي حالياً إني هوضح لحضرتك رقم
-                                        الشركة المسؤولة عن الخدمات.. ممكن حضرتك تكتب الرقم معايا؟ مواعيد العمل بتكون
-                                        (.........)"
+                                        "تمام يا أستاذ (.....) الإجراء اللي بيتم من خلالي حالياً إني هوضح لحضرتك رقم الشركة المسؤولة عن الخدمات.. ممكن حضرتك تكتب الرقم معايا؟ مواعيد العمل بتكون (.........)"
                                     </div>
                                 </div>
                             </div>
@@ -1143,12 +1072,10 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i>
-                                            Customer Service
+                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i> Customer Service
                                         </li>
                                     </ul>
                                 </div>
@@ -1159,10 +1086,8 @@
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
+                                    <div class="status-badge" style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
+                                        <div class="status-dot" style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
                                         Closed
                                     </div>
                                 </div>
@@ -1185,11 +1110,9 @@
                                     <div class="faq-block-title">الرد على العميل</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    نوضح انه سيتم تقديم طلب للادارة والتواصل في خلال اليوم حتي الساعة ال 6 مساءا وترسل
-                                    تفاصيل المكالمة علي الجروب.
+                                    نوضح انه سيتم تقديم طلب للادارة والتواصل في خلال اليوم حتي الساعة ال 6 مساءا وترسل تفاصيل المكالمة علي الجروب.
                                     <div class="faq-script-text">
-                                        "تمام يا أستاذ (.....) حالياً هاسجل لحضرتك طلب وفي مسؤول من الادارة هيتواصل مع
-                                        حضرتك علي مدار اليوم."
+                                        "تمام يا أستاذ (.....) حالياً هاسجل لحضرتك طلب وفي مسؤول من الادارة هيتواصل مع حضرتك علي مدار اليوم."
                                     </div>
                                 </div>
                             </div>
@@ -1201,13 +1124,11 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-building" style="color: #dc2626; margin-left: 5px;"></i>
-                                            lead و HQ
+                                            <i class="fas fa-building" style="color: #dc2626; margin-left: 5px;"></i> lead و HQ
                                         </li>
                                         <div style="font-weight: bold; text-align: center; margin: 4px 0;">أو</div>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET و HQ
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET و HQ
                                         </li>
                                     </ul>
                                 </div>
@@ -1242,12 +1163,9 @@
                                     <div class="faq-block-title">الرد على العميل</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    نوضح انه سيتم تقديم طلب للادارة المختصة (المبيعات) والتواصل في خلال يومين عمل يتم
-                                    تسجيلها علي السيستم (Buyer).
+                                    نوضح انه سيتم تقديم طلب للادارة المختصة (المبيعات) والتواصل في خلال يومين عمل يتم تسجيلها علي السيستم (Buyer).
                                     <div class="faq-script-text">
-                                        "تمام يا أستاذ (.....) بخصوص نسبة العموله اللي حضرتك بتستفسر عنها انا من خلالي
-                                        حالا هاقوم بتقديم طلب للاداره المختصه وهما بدورهم بيتواصلو مع حضرتك في خلال
-                                        يومين عمل."
+                                        "تمام يا أستاذ (.....) بخصوص نسبة العموله اللي حضرتك بتستفسر عنها انا من خلالي حالا هاقوم بتقديم طلب للاداره المختصه وهما بدورهم بيتواصلو مع حضرتك في خلال يومين عمل."
                                     </div>
                                 </div>
                             </div>
@@ -1259,8 +1177,7 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-user-tag" style="color: #dc2626; margin-left: 5px;"></i>
-                                            ticket و buyer
+                                            <i class="fas fa-user-tag" style="color: #dc2626; margin-left: 5px;"></i> ticket و buyer
                                         </li>
                                     </ul>
                                 </div>
@@ -1295,12 +1212,9 @@
                                     <div class="faq-block-title">الرد على العميل</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    نوضح انه سيتم تقديم طلب للادارة المختصة والتواصل في خلال يومين عمل ويتم تسجيلها علي
-                                    السيستم (collection).
+                                    نوضح انه سيتم تقديم طلب للادارة المختصة والتواصل في خلال يومين عمل ويتم تسجيلها علي السيستم (collection).
                                     <div class="faq-script-text">
-                                        "أوضح لحضرتك يا أستاذ (.....) ان الاجراء اللي بيتم من خلالي حاليا بخصوص استفسار
-                                        حضرتك عن (......) هو تقديم طلب للاداره المختصه وهما بدورهم بيتواصلو مع حضرتك في
-                                        خلال يومين عمل."
+                                        "أوضح لحضرتك يا أستاذ (.....) ان الاجراء اللي بيتم من خلالي حاليا بخصوص استفسار حضرتك عن (......) هو تقديم طلب للاداره المختصه وهما بدورهم بيتواصلو مع حضرتك في خلال يومين عمل."
                                     </div>
                                 </div>
                             </div>
@@ -1312,13 +1226,10 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-money-check-alt"
-                                                style="color: #dc2626; margin-left: 5px;"></i>
-                                            COLLECTION
+                                            <i class="fas fa-money-check-alt" style="color: #dc2626; margin-left: 5px;"></i> COLLECTION
                                         </li>
                                     </ul>
                                 </div>
@@ -1354,10 +1265,8 @@
                                     <div class="faq-block-title">الرد على العميل</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    نوضح ان المسؤولين عن العملاء المالكين مواعيد عملهم من الساعة ال 10 صباحا وحتي ال 6
-                                    مساءا يوميا.
-                                    <br>
-                                    - بالنسبة لمسؤولين المبيعات نوضح مواعيد الفروع المتاحة لدينا لكل فرع.
+                                    نوضح ان المسؤولين عن العملاء المالكين مواعيد عملهم من الساعة ال 10 صباحا وحتي ال 6 مساءا يوميا.
+                                    <br> - بالنسبة لمسؤولين المبيعات نوضح مواعيد الفروع المتاحة لدينا لكل فرع.
                                 </div>
                             </div>
                             <div class="faq-detail-block">
@@ -1368,16 +1277,13 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET customer service
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET customer service
                                         </li>
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-building" style="color: #dc2626; margin-left: 5px;"></i>
-                                            أو lead للفرع
+                                            <i class="fas fa-building" style="color: #dc2626; margin-left: 5px;"></i> أو lead للفرع
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-user-tag" style="color: #dc2626; margin-left: 5px;"></i>
-                                            أو ticket و buyer
+                                            <i class="fas fa-user-tag" style="color: #dc2626; margin-left: 5px;"></i> أو ticket و buyer
                                         </li>
                                     </ul>
                                 </div>
@@ -1388,10 +1294,8 @@
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
+                                    <div class="status-badge" style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
+                                        <div class="status-dot" style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
                                         Closed
                                     </div>
                                 </div>
@@ -1416,8 +1320,7 @@
                                 <div class="faq-block-content">
                                     نوضح انه غير متاح. وتسجل lead وترسل الي HQ.
                                     <div class="faq-script-text">
-                                        "اسمحلي اوضح لحضرتك استاذ ..... بان الافراح او الفوتوسيشن بتكون غير متاحه داخل
-                                        مشاريع دلتا كابيتال"
+                                        "اسمحلي اوضح لحضرتك استاذ ..... بان الافراح او الفوتوسيشن بتكون غير متاحه داخل مشاريع دلتا كابيتال"
                                     </div>
                                 </div>
                             </div>
@@ -1429,13 +1332,11 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-building" style="color: #dc2626; margin-left: 5px;"></i>
-                                            lead و HQ
+                                            <i class="fas fa-building" style="color: #dc2626; margin-left: 5px;"></i> lead و HQ
                                         </li>
                                         <div style="font-weight: bold; text-align: center; margin: 4px 0;">أو</div>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET و HQ
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET و HQ
                                         </li>
                                     </ul>
                                 </div>
@@ -1446,10 +1347,8 @@
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
+                                    <div class="status-badge" style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
+                                        <div class="status-dot" style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
                                         Closed
                                     </div>
                                 </div>
@@ -1474,9 +1373,7 @@
                                 <div class="faq-block-content">
                                     نوضح انه سيتم تقديم طلب للادارة المختصة والتواصل في خلال يومين عمل.
                                     <div class="faq-script-text">
-                                        "اسمحلي اوضح لحضرتك استاذ ...... ان الاجراء اللي بيتم من خلالي حاليا بخصوص
-                                        استفسار حضرتك عن ...... هو تقديم طلب للاداره المختصه وهما بدورهم بيتواصلو مع
-                                        حضرتك في خلال يومين عمل."
+                                        "اسمحلي اوضح لحضرتك استاذ ...... ان الاجراء اللي بيتم من خلالي حاليا بخصوص استفسار حضرتك عن ...... هو تقديم طلب للاداره المختصه وهما بدورهم بيتواصلو مع حضرتك في خلال يومين عمل."
                                     </div>
                                 </div>
                             </div>
@@ -1488,30 +1385,28 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i>
-                                            customer service
+                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i> customer service
                                         </li>
                                     </ul>
                                 </div>
                             </div>
+
                             <div class="faq-detail-block">
                                 <div class="faq-block-header">
                                     <div class="faq-block-icon"><i class="fas fa-info-circle"></i></div>
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
-                                        Closed
+                                    <div class="status-badge">
+                                        <div class="status-dot"></div>
+                                        Open
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -1531,18 +1426,14 @@
                                     <div class="faq-block-title">الرد على العميل</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    نوضح انه يتم تسديدهم كاش وانه لا يوجد دفع فيزا لاي قسط او فرق وديعة في جميع الفروع
-                                    وفي مقر المشروع.
+                                    نوضح انه يتم تسديدهم كاش وانه لا يوجد دفع فيزا لاي قسط او فرق وديعة في جميع الفروع وفي مقر المشروع.
                                     <div class="faq-script-text">
-                                        "اسمحلي اوضح لحضرتك استاذ ....... بخصوص الدفع عن طريق الفيزا فهو بيكون غير متاح
-                                        وبيكون الدفع فقط كاش في مقر الفرع او مقر الموقع يا فندم"
+                                        "اسمحلي اوضح لحضرتك استاذ ....... بخصوص الدفع عن طريق الفيزا فهو بيكون غير متاح وبيكون الدفع فقط كاش في مقر الفرع او مقر الموقع يا فندم"
                                     </div>
                                     <br>
                                     <strong style="color: #dc2626;">*اما بالنسبة للسؤال رقم انستا باي او رقم فودافون
                                         كاش*</strong>
-                                    <br>
-                                    نوضح انه سيتم تقديم طلب والتواصل خلال يومين عمل. اما اذا كان العميل مستعجل فنوضح ان
-                                    التواصل في خلال اسرع وقت وترسل علي الجروب.
+                                    <br> نوضح انه سيتم تقديم طلب والتواصل خلال يومين عمل. اما اذا كان العميل مستعجل فنوضح ان التواصل في خلال اسرع وقت وترسل علي الجروب.
                                 </div>
                             </div>
                             <div class="faq-detail-block">
@@ -1553,18 +1444,14 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <strong
-                                                style="color:rgb(30, 31, 30); display: block; margin-bottom: 4px;">بالنسبة
+                                            <strong style="color:rgb(30, 31, 30); display: block; margin-bottom: 4px;">بالنسبة
                                                 للقسط:</strong>
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET و COLLECTION
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET و COLLECTION
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <strong
-                                                style="color:rgb(30, 31, 30); display: block; margin-bottom: 4px; margin-top: 8px;">بالنسبة
+                                            <strong style="color:rgb(30, 31, 30); display: block; margin-bottom: 4px; margin-top: 8px;">بالنسبة
                                                 للوديعة:</strong>
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET و customer service
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET و customer service
                                         </li>
                                     </ul>
                                 </div>
@@ -1575,11 +1462,9 @@
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
-                                        Closed
+                                    <div class="status-badge">
+                                        <div class="status-dot"></div>
+                                        Open
                                     </div>
                                 </div>
                             </div>
@@ -1603,14 +1488,10 @@
                                 </div>
                                 <div class="faq-block-content">
                                     نوضح انه يوجد بالفعل عيادة في مارينا دلتا ويوجد بها دكتور جراحة عامة.
-                                    <br>
-                                    - اما بالنسبة للمحلات في المول نوضح ارقام شركات التشغيل حسب مشروع كل عميل.
+                                    <br> - اما بالنسبة للمحلات في المول نوضح ارقام شركات التشغيل حسب مشروع كل عميل.
                                     <div class="faq-script-text">
                                         "اسمحلي استاذ ..... اوضح لحضرتك انه بالفعل يوجد عياة بها اخصائي جراحه عامه"
-                                        <br>
-                                        "اسمحلي استاذ ...... بخصوص استفسار حضرتك عن معلومات المحلات المتواجده داخل
-                                        مارينا دلتا فانا هاوضح لحضرتك ارقام شركة التشغيل والخدمات في المشروع هاتوضح
-                                        لحضرتك تفاصيل اكتر"
+                                        <br> "اسمحلي استاذ ...... بخصوص استفسار حضرتك عن معلومات المحلات المتواجده داخل مارينا دلتا فانا هاوضح لحضرتك ارقام شركة التشغيل والخدمات في المشروع هاتوضح لحضرتك تفاصيل اكتر"
                                     </div>
                                 </div>
                             </div>
@@ -1622,12 +1503,10 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i>
-                                            customer service
+                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i> customer service
                                         </li>
                                     </ul>
                                 </div>
@@ -1638,10 +1517,8 @@
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
+                                    <div class="status-badge" style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
+                                        <div class="status-dot" style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
                                         Closed
                                     </div>
                                 </div>
@@ -1667,11 +1544,8 @@
                                 <div class="faq-block-content">
                                     نوضح انه يمكنه احضار اي اوراق من اي فرع كما يمكنه تسديد اي مستحقات في اي فرع.
                                     <div class="faq-script-text">
-                                        "اوضح لحضرتك استاذ ...... انه بالفعل بما ان حضرتك مالك يمكن احضار الاوراق من اي
-                                        فرع"
-                                        <br>
-                                        "اوضح لحضرتك استاذ ...... حضرتك تقدر تسدد اي مستحقات في اي فرع من فروع دلتا
-                                        كابيتال."
+                                        "اوضح لحضرتك استاذ ...... انه بالفعل بما ان حضرتك مالك يمكن احضار الاوراق من اي فرع"
+                                        <br> "اوضح لحضرتك استاذ ...... حضرتك تقدر تسدد اي مستحقات في اي فرع من فروع دلتا كابيتال."
                                     </div>
                                 </div>
                             </div>
@@ -1683,18 +1557,14 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <strong
-                                                style="color:rgb(30, 31, 30); display: block; margin-bottom: 4px;">بالنسبة
+                                            <strong style="color:rgb(30, 31, 30); display: block; margin-bottom: 4px;">بالنسبة
                                                 للقسط:</strong>
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET و COLLECTION
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET و COLLECTION
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <strong
-                                                style="color:rgb(30, 31, 30); display: block; margin-bottom: 4px; margin-top: 8px;">بالنسبة
+                                            <strong style="color:rgb(30, 31, 30); display: block; margin-bottom: 4px; margin-top: 8px;">بالنسبة
                                                 للوديعة:</strong>
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET و customer service
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET و customer service
                                         </li>
                                     </ul>
                                 </div>
@@ -1705,10 +1575,8 @@
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
+                                    <div class="status-badge" style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
+                                        <div class="status-dot" style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
                                         Closed
                                     </div>
                                 </div>
@@ -1732,8 +1600,7 @@
                                 </div>
                                 <div class="faq-block-content">
                                     <div class="faq-script-text">
-                                        "استاذ ...... انا بعتذر جدا لحضرتك انه غير متاح تواجد اي مالك من مشروع معين في
-                                        مشروع اخر وذلك للحفاظ علي خصوصية العملاء لكل مشاريع دلتا كابيتال"
+                                        "استاذ ...... انا بعتذر جدا لحضرتك انه غير متاح تواجد اي مالك من مشروع معين في مشروع اخر وذلك للحفاظ علي خصوصية العملاء لكل مشاريع دلتا كابيتال"
                                     </div>
                                 </div>
                             </div>
@@ -1745,12 +1612,10 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i>
-                                            customer service
+                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i> customer service
                                         </li>
                                     </ul>
                                 </div>
@@ -1761,10 +1626,8 @@
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
+                                    <div class="status-badge" style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
+                                        <div class="status-dot" style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
                                         Closed
                                     </div>
                                 </div>
@@ -1789,10 +1652,7 @@
                                 <div class="faq-block-content">
                                     نوضح ان الشركة ليس لها علاقة بجروب الملاك ونوجه العميل لشركة التشغيل حسب مشروعه.
                                     <div class="faq-script-text">
-                                        "اوضح لحضرتك استاذ ....... ان الاجراء اللي بيتم من خلالي حاليا بخصوص استفسار
-                                        حضرتك عن اضافة رقم لجروب الواتس اب لملاك المشروع فحاليا هاوضح لحضرتك رقم شركة
-                                        التشغيل والخدمات وهما بدورهم هايوضحـو لحضرتك كيفية اضافة الرقم علي الجروب يا
-                                        استاذ ......."
+                                        "اوضح لحضرتك استاذ ....... ان الاجراء اللي بيتم من خلالي حاليا بخصوص استفسار حضرتك عن اضافة رقم لجروب الواتس اب لملاك المشروع فحاليا هاوضح لحضرتك رقم شركة التشغيل والخدمات وهما بدورهم هايوضحـو لحضرتك كيفية اضافة الرقم علي الجروب يا استاذ ......."
                                     </div>
                                 </div>
                             </div>
@@ -1804,12 +1664,10 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i>
-                                            customer service
+                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i> customer service
                                         </li>
                                     </ul>
                                 </div>
@@ -1820,10 +1678,8 @@
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
+                                    <div class="status-badge" style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
+                                        <div class="status-dot" style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
                                         Closed
                                     </div>
                                 </div>
@@ -1846,11 +1702,9 @@
                                     <div class="faq-block-title">الرد على العميل</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    نوضح ان الشركة لا تتعامل بتفويض او توكيل وانما التعامل مع الملاك واقربائهم من الدرجة
-                                    الاولي فقط.
+                                    نوضح ان الشركة لا تتعامل بتفويض او توكيل وانما التعامل مع الملاك واقربائهم من الدرجة الاولي فقط.
                                     <div class="faq-script-text">
-                                        "استاذ ...... اوضح لحضرتك انه غير مسموح للتعامل مع اي توكيلات او تفويضات من اي
-                                        نوع وبيكون التعامل مع المالك نفسه بطريقه مباشره او اقرباء الدرجه الاولي فقط"
+                                        "استاذ ...... اوضح لحضرتك انه غير مسموح للتعامل مع اي توكيلات او تفويضات من اي نوع وبيكون التعامل مع المالك نفسه بطريقه مباشره او اقرباء الدرجه الاولي فقط"
                                     </div>
                                 </div>
                             </div>
@@ -1860,8 +1714,7 @@
                                     <div class="faq-block-title">تسجيل السيستم</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div
-                                        style="font-weight: bold; color: #dc2626; text-align: center; border: 2px dashed #dc2626; padding: 10px; border-radius: 8px; background: #fef2f2;">
+                                    <div style="font-weight: bold; color: #dc2626; text-align: center; border: 2px dashed #dc2626; padding: 10px; border-radius: 8px; background: #fef2f2;">
                                         لا تسجل علي السيستم
                                     </div>
                                 </div>
@@ -1872,10 +1725,8 @@
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
+                                    <div class="status-badge" style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
+                                        <div class="status-dot" style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
                                         Closed
                                     </div>
                                 </div>
@@ -1898,11 +1749,9 @@
                                     <div class="faq-block-title">الرد على العميل</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    نوضح ان هذا الامر غير متاح حفاظا علي سرية بيانات العملاء ويمكن الرجوع للعميل نفسه
-                                    للتأكد من اي امر.
+                                    نوضح ان هذا الامر غير متاح حفاظا علي سرية بيانات العملاء ويمكن الرجوع للعميل نفسه للتأكد من اي امر.
                                     <div class="faq-script-text">
-                                        "استاذ ...... بعتذر جدا لحضرتك لكن اي بيانات خاصه بالعملاء بتكون عن طريق العميل
-                                        نفسه فقط حفاظا علي سرية بيانات العملاء"
+                                        "استاذ ...... بعتذر جدا لحضرتك لكن اي بيانات خاصه بالعملاء بتكون عن طريق العميل نفسه فقط حفاظا علي سرية بيانات العملاء"
                                     </div>
                                 </div>
                             </div>
@@ -1912,8 +1761,7 @@
                                     <div class="faq-block-title">تسجيل السيستم</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div
-                                        style="font-weight: bold; color: #dc2626; text-align: center; border: 2px dashed #dc2626; padding: 10px; border-radius: 8px; background: #fef2f2;">
+                                    <div style="font-weight: bold; color: #dc2626; text-align: center; border: 2px dashed #dc2626; padding: 10px; border-radius: 8px; background: #fef2f2;">
                                         لا تسجل علي السيستم
                                     </div>
                                 </div>
@@ -1924,10 +1772,8 @@
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
+                                    <div class="status-badge" style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
+                                        <div class="status-dot" style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
                                         Closed
                                     </div>
                                 </div>
@@ -1950,12 +1796,9 @@
                                     <div class="faq-block-title">الرد على العميل</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    نوضح انه سيتم تقديم طلب للادارة المختصة والتواصل في خلال يومين عمل. وتسجل lead وترسل
-                                    الي HQ.
+                                    نوضح انه سيتم تقديم طلب للادارة المختصة والتواصل في خلال يومين عمل. وتسجل lead وترسل الي HQ.
                                     <div class="faq-script-text">
-                                        "اوضح لحضرتك استاذ ....... ان الاجراء اللي بيتم من خلالي حاليا بخصوص استفسار
-                                        حضرتك عن ...... هو تقديم طلب للاداره المختصه وهما بدورهم بيتواصلو مع حضرتك في
-                                        خلال يومين عمل."
+                                        "اوضح لحضرتك استاذ ....... ان الاجراء اللي بيتم من خلالي حاليا بخصوص استفسار حضرتك عن ...... هو تقديم طلب للاداره المختصه وهما بدورهم بيتواصلو مع حضرتك في خلال يومين عمل."
                                     </div>
                                 </div>
                             </div>
@@ -1967,13 +1810,11 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-building" style="color: #dc2626; margin-left: 5px;"></i>
-                                            lead و HQ
+                                            <i class="fas fa-building" style="color: #dc2626; margin-left: 5px;"></i> lead و HQ
                                         </li>
                                         <div style="font-weight: bold; text-align: center; margin: 4px 0;">أو</div>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET و HQ
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET و HQ
                                         </li>
                                     </ul>
                                 </div>
@@ -1984,10 +1825,8 @@
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
+                                    <div class="status-badge" style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
+                                        <div class="status-dot" style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
                                         Closed
                                     </div>
                                 </div>
@@ -2010,11 +1849,9 @@
                                     <div class="faq-block-title">الرد على العميل</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    نوضح ان الفندق يعمل طوال السنة ام بالنسبة لخدمات لاكشيري من كافيهات وغيرها فهي تعمل
-                                    في فترة الصيف فقط.
+                                    نوضح ان الفندق يعمل طوال السنة ام بالنسبة لخدمات لاكشيري من كافيهات وغيرها فهي تعمل في فترة الصيف فقط.
                                     <div class="faq-script-text">
-                                        "استاذ ...... اسمحلي اوضح لحضرتك ان الفندق بيعمل علي مدار السنه اما بالنسبه
-                                        للخدمات لاكشيري فبتكون في فترة الصيف فقط."
+                                        "استاذ ...... اسمحلي اوضح لحضرتك ان الفندق بيعمل علي مدار السنه اما بالنسبه للخدمات لاكشيري فبتكون في فترة الصيف فقط."
                                     </div>
                                 </div>
                             </div>
@@ -2026,16 +1863,13 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-building" style="color: #dc2626; margin-left: 5px;"></i>
-                                            lead للفرع
+                                            <i class="fas fa-building" style="color: #dc2626; margin-left: 5px;"></i> lead للفرع
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i>
-                                            customer service
+                                            <i class="fas fa-user-shield" style="color: #dc2626; margin-left: 5px;"></i> customer service
                                         </li>
                                     </ul>
                                 </div>
@@ -2046,10 +1880,8 @@
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
+                                    <div class="status-badge" style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
+                                        <div class="status-dot" style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
                                         Closed
                                     </div>
                                 </div>
@@ -2075,8 +1907,7 @@
                                 <div class="faq-block-content">
                                     نوضح انه سيتم تقديم طلب للادارة المختصة والتواصل في خلال يومين عمل.
                                     <div class="faq-script-text">
-                                        "استاذ ....... اسمحلي اوضح لحضرتك ان الاجراء من خلالي حاليا هو ان هاقدم لحضرتك
-                                        طلب للاداره المختصه وهما بدورهم هايتواصلو مع حضرتك في خلال يومين عمل."
+                                        "استاذ ....... اسمحلي اوضح لحضرتك ان الاجراء من خلالي حاليا هو ان هاقدم لحضرتك طلب للاداره المختصه وهما بدورهم هايتواصلو مع حضرتك في خلال يومين عمل."
                                     </div>
                                 </div>
                             </div>
@@ -2088,13 +1919,10 @@
                                 <div class="faq-block-content">
                                     <ul style="list-style: none; padding: 0; margin: 0;">
                                         <li style="margin-bottom: 8px; color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i>
-                                            TICKET
+                                            <i class="fas fa-ticket-alt" style="color: #dc2626; margin-left: 5px;"></i> TICKET
                                         </li>
                                         <li style="color: #dc2626; font-weight: bold;">
-                                            <i class="fas fa-file-invoice-dollar"
-                                                style="color: #dc2626; margin-left: 5px;"></i>
-                                            COLLECTION
+                                            <i class="fas fa-file-invoice-dollar" style="color: #dc2626; margin-left: 5px;"></i> COLLECTION
                                         </li>
                                     </ul>
                                 </div>
@@ -2105,10 +1933,8 @@
                                     <div class="faq-block-title">الحالة (Status)</div>
                                 </div>
                                 <div class="faq-block-content">
-                                    <div class="status-badge"
-                                        style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
-                                        <div class="status-dot"
-                                            style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
+                                    <div class="status-badge" style="background: #eee1df; color: #eb290f; border-color: #eb290f;">
+                                        <div class="status-dot" style="background: #eb290f; box-shadow: 0 0 0 2px #e0dddc;"></div>
                                         Closed
                                     </div>
                                 </div>
@@ -2124,44 +1950,34 @@
                 <!-- مربع البحث عن الأسئلة -->
                 <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 28px;">
                     <div style="position: relative; width: 380px; max-width: 90%;">
-                        <input id="system-notes-search" type="text" placeholder="ابحث في الملاحظات..."
-                            style="width: 100%; padding: 14px 44px 14px 16px; font-size: 1.2em; border-radius: 30px; border: 1.5px solid var(--nav-accent); box-shadow: 0 4px 18px rgba(0,0,0,0.05); outline: none; transition: border 0.2s, box-shadow 0.2s; background: #fff; color: #222; text-align: right; font-family: 'Cairo', sans-serif;">
-                        <span
-                            style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--nav-accent); font-size: 1.3em; pointer-events: none;">
+                        <input id="system-notes-search" type="text" placeholder="ابحث في الملاحظات..." style="width: 100%; padding: 14px 44px 14px 16px; font-size: 1.2em; border-radius: 30px; border: 1.5px solid var(--nav-accent); box-shadow: 0 4px 18px rgba(0,0,0,0.05); outline: none; transition: border 0.2s, box-shadow 0.2s; background: #fff; color: #222; text-align: right; font-family: 'Cairo', sans-serif;">
+                        <span style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--nav-accent); font-size: 1.3em; pointer-events: none;">
                             <i class="fas fa-search"></i>
                         </span>
                     </div>
                 </div>
 
-                <div class="system-notes-grid"
-                    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 10px;">
+                <div class="system-notes-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 10px;">
 
                     <!-- Note 1: Sales Inquiries -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-tags" style="font-size: 1.2em;"></i>
-                            <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">( Sales Inquiries
-                                )
+                            <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">( Sales Inquiries )
                             </h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
                             اي عميل بيستفسر عن أسعار الوحدات والمساحات والمشاريع للشراء أو للإيجار
                         </div>
                     </div>
 
                     <!-- Note 6: LEAD+RENT -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-key" style="font-size: 1.2em;"></i>
                             <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">LEAD + RENT</h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
                             اي عميل جديد بيستفسر عن الايجارات
                         </div>
                     </div>
@@ -2169,82 +1985,60 @@
 
 
                     <!-- Note 3: BUYER -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-user-check" style="font-size: 1.2em;"></i>
                             <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">BUYER</h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
                             اي عميل بيستفسر عن عموله الترشيح
                         </div>
                     </div>
 
                     <!-- Note 4: Collection Team -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-money-bill-wave" style="font-size: 1.2em;"></i>
                             <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">Collection Team
                             </h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
-                            أي عميل بيستفسر عن التقسيط بالوحدة الخاصة به ( طريقة السداد مشكلة في التقسيط - يريد التواصل
-                            مع الفرع
-                            بخصوص التقسيط ) بيتم إختيارها علي السيستم
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                            أي عميل بيستفسر عن التقسيط بالوحدة الخاصة به ( طريقة السداد مشكلة في التقسيط - يريد التواصل مع الفرع بخصوص التقسيط ) بيتم إختيارها علي السيستم
                         </div>
                     </div>
 
                     <!-- Note 5: LEAD+HQ -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #ec4899, #db2777); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #ec4899, #db2777); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-briefcase" style="font-size: 1.2em;"></i>
                             <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">LEAD + HQ</h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
-                            أي عميل بيسأل عن الماركتينج أو شغل أو يريد التعاقد مع الشركه بخصوص شئ أخر خارج عن الوحدات
-                            بيتم
-                            إرسالها علي السيستم الوحدات التجاريه والافراح والفوتوسيشن
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                            أي عميل بيسأل عن الماركتينج أو شغل أو يريد التعاقد مع الشركه بخصوص شئ أخر خارج عن الوحدات بيتم إرسالها علي السيستم الوحدات التجاريه والافراح والفوتوسيشن
                         </div>
                     </div>
                     <!-- Note 2: CS Inquiries -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-headset" style="font-size: 1.2em;"></i>
                             <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">( CS Inquiries )
                             </h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
-                            أي عميل بيستفسر بخصوص التعديلات في الوحدة الخاصة به ( صيانة - تركيب - تحديثات أعطال - نقل
-                            ملكية -
-                            أي إستفسار عن الوحدة الخاصة بالعميل غير التقسيط ) بيتم إختيارها علي السيستم
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                            أي عميل بيستفسر بخصوص التعديلات في الوحدة الخاصة به ( صيانة - تركيب - تحديثات أعطال - نقل ملكية - أي إستفسار عن الوحدة الخاصة بالعميل غير التقسيط ) بيتم إختيارها علي السيستم
                         </div>
                     </div>
 
 
 
                     <!-- Note 7: BUYER + other + Open -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #475569, #334155); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #475569, #334155); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-users" style="font-size: 1.2em;"></i>
-                            <h3 style="margin: 0; font-size: 0.9em; font-family: 'Cairo', sans-serif;">BUYER + other +
-                                Open
+                            <h3 style="margin: 0; font-size: 0.9em; font-family: 'Cairo', sans-serif;">BUYER + other + Open
                             </h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
                             اي عميل بيستفسر عن الترشيحات
                         </div>
                     </div>
@@ -2257,37 +2051,29 @@
                 <!-- مربع البحث عن Leads -->
                 <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 28px;">
                     <div style="position: relative; width: 380px; max-width: 90%;">
-                        <input id="system-leads-search" type="text" placeholder="ابحث في الـ Leads..."
-                            style="width: 100%; padding: 14px 44px 14px 16px; font-size: 1.2em; border-radius: 30px; border: 1.5px solid var(--nav-accent); box-shadow: 0 4px 18px rgba(0,0,0,0.05); outline: none; transition: border 0.2s, box-shadow 0.2s; background: #fff; color: #222; text-align: right; font-family: 'Cairo', sans-serif;">
-                        <span
-                            style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--nav-accent); font-size: 1.3em; pointer-events: none;">
+                        <input id="system-leads-search" type="text" placeholder="ابحث في الـ Leads..." style="width: 100%; padding: 14px 44px 14px 16px; font-size: 1.2em; border-radius: 30px; border: 1.5px solid var(--nav-accent); box-shadow: 0 4px 18px rgba(0,0,0,0.05); outline: none; transition: border 0.2s, box-shadow 0.2s; background: #fff; color: #222; text-align: right; font-family: 'Cairo', sans-serif;">
+                        <span style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--nav-accent); font-size: 1.3em; pointer-events: none;">
                             <i class="fas fa-search"></i>
                         </span>
                     </div>
                 </div>
 
-                <div class="system-notes-grid"
-                    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 10px;">
+                <div class="system-notes-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 10px;">
 
                     <!-- Card 1: Branch Name -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #ef4444, #b91c1c); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #ef4444, #b91c1c); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-map-marked-alt" style="font-size: 1.2em;"></i>
-                            <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">Branch Name &
-                                Assign
+                            <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">Branch Name & Assign
                             </h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
                             <ul style="list-style: none; padding: 0; margin: 0;">
                                 <li style="margin-bottom: 8px;"><strong>الدقهلية:</strong> Mansourah</li>
                                 <li style="margin-bottom: 8px;"><strong>الغربية:</strong> Mahala/Tanta</li>
                                 <li style="margin-bottom: 8px;"><strong>كفر الشيخ:</strong> Kafr El Sheikh (نختار حرف S)
                                 </li>
-                                <li style="margin-bottom: 8px;"><strong>HQ:</strong> يتم اختيارها عند البحث عن وظيفة او
-                                    في حالة التعاقد مع الشركة</li>
+                                <li style="margin-bottom: 8px;"><strong>HQ:</strong> يتم اختيارها عند البحث عن وظيفة او في حالة التعاقد مع الشركة</li>
                                 <hr style="border-top: 1px dashed #cbd5e1; margin: 10px 0;">
                                 <li style="margin-bottom: 8px;"><strong>Assign type (Branches):</strong> دائماً</li>
                                 <li><strong>Assign type (Queue):</strong> عندما تكون المحافظة غير متوفرة في Branch Name
@@ -2297,64 +2083,53 @@
                     </div>
 
                     <!-- Card 2: Information -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #0ea5e9, #0284c7); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #0ea5e9, #0284c7); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-id-card" style="font-size: 1.2em;"></i>
                             <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">Information</h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
                             <ul style="list-style: none; padding: 0; margin: 0;">
                                 <li><strong>First name:</strong> اسم العميل</li>
                                 <li><strong>Last name:</strong> اسم والد العميل</li>
                                 <li><strong>Phone:</strong> رقم الموبايل</li>
                                 <li><strong>Address:</strong> العنوان</li>
                                 <li><strong>Job:</strong> الوظيفة</li>
-                                <li><strong>Company:</strong> اسم الشركة (اذا كان لديه شركة ويريد التعاقد مع دلتا
-                                    كابيتال)</li>
+                                <li><strong>Company:</strong> اسم الشركة (اذا كان لديه شركة ويريد التعاقد مع دلتا كابيتال)
+                                </li>
                                 <li><strong>Phone land:</strong> الرقم الارضي (اذا وجد)</li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Card 3: Status Information -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-info-circle" style="font-size: 1.2em;"></i>
-                            <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">Status
-                                Information</h3>
+                            <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">Status Information
+                            </h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
                             <ul style="list-style: none; padding: 0; margin: 0;">
                                 <li style="margin-bottom: 8px;"><strong>Status:</strong> Assign to branch</li>
                                 <li style="margin-bottom: 8px;"><strong>Qualification:</strong> Pending Qualification
                                 </li>
-                                <li><strong>Lead Stage:</strong> Interested <span
-                                        style="font-size: 0.9em; color: #64748b;">(اذا اوضح العميل انه يريد الشراء
+                                <li><strong>Lead Stage:</strong> Interested <span style="font-size: 0.9em; color: #64748b;">(اذا اوضح العميل انه يريد الشراء
                                         فقط)</span></li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Card 4: Lead Source -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-bullhorn" style="font-size: 1.2em;"></i>
                             <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">Lead Source</h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
                             <div style="margin-bottom: 10px; font-weight: bold;">Lead Source Info:</div>
                             <ul style="list-style: none; padding: 0; margin: 0;">
-                                <li style="margin-bottom: 5px;"><strong>Digital:</strong> website (جوجل - يكتب في
-                                    الكومنت "معرفه الرقم عن طريق جوجل") / facebook / instagram</li>
+                                <li style="margin-bottom: 5px;"><strong>Digital:</strong> website (جوجل - يكتب في الكومنت "معرفه الرقم عن طريق جوجل") / facebook / instagram</li>
                                 <li style="margin-bottom: 5px;"><strong>Outdoors:</strong> billboard</li>
                                 <li style="margin-bottom: 5px;"><strong>WOM:</strong> friends</li>
                                 <li><strong>Channel:</strong> call center</li>
@@ -2363,19 +2138,15 @@
                     </div>
 
                     <!-- Card 5: Request Info & Other -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-clipboard-list" style="font-size: 1.2em;"></i>
-                            <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">Request & Other
-                                Info</h3>
+                            <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">Request & Other Info
+                            </h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
                             <ul style="list-style: none; padding: 0; margin: 0;">
-                                <li style="margin-bottom: 8px;"><strong>Property Type:</strong> Buy (للشراء وحدة) / Rent
-                                    (لايجار وحدة)</li>
+                                <li style="margin-bottom: 8px;"><strong>Property Type:</strong> Buy (للشراء وحدة) / Rent (لايجار وحدة)</li>
                                 <li style="margin-bottom: 8px;"><strong>Project Name:</strong> اسم المشروع</li>
                                 <hr style="border-top: 1px dashed #cbd5e1; margin: 10px 0;">
                                 <li style="margin-bottom: 8px;"><strong>City:</strong> المحافظة</li>
@@ -2385,15 +2156,12 @@
                     </div>
 
                     <!-- Card 6: Comment -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #64748b, #475569); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #64748b, #475569); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-comment-dots" style="font-size: 1.2em;"></i>
                             <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">Comment</h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
                             <strong>Comment:</strong> Call Center Comment
                         </div>
                     </div>
@@ -2406,29 +2174,23 @@
                 <!-- مربع البحث عن Client Notes -->
                 <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 28px;">
                     <div style="position: relative; width: 380px; max-width: 90%;">
-                        <input id="system-client-search" type="text" placeholder="ابحث في الـ Client Notes..."
-                            style="width: 100%; padding: 14px 44px 14px 16px; font-size: 1.2em; border-radius: 30px; border: 1.5px solid var(--nav-accent); box-shadow: 0 4px 18px rgba(0,0,0,0.05); outline: none; transition: border 0.2s, box-shadow 0.2s; background: #fff; color: #222; text-align: right; font-family: 'Cairo', sans-serif;">
-                        <span
-                            style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--nav-accent); font-size: 1.3em; pointer-events: none;">
+                        <input id="system-client-search" type="text" placeholder="ابحث في الـ Client Notes..." style="width: 100%; padding: 14px 44px 14px 16px; font-size: 1.2em; border-radius: 30px; border: 1.5px solid var(--nav-accent); box-shadow: 0 4px 18px rgba(0,0,0,0.05); outline: none; transition: border 0.2s, box-shadow 0.2s; background: #fff; color: #222; text-align: right; font-family: 'Cairo', sans-serif;">
+                        <span style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--nav-accent); font-size: 1.3em; pointer-events: none;">
                             <i class="fas fa-search"></i>
                         </span>
                     </div>
                 </div>
 
-                <div class="system-notes-grid"
-                    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 10px;">
+                <div class="system-notes-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 10px;">
 
                     <!-- Card 1: Search Process -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-search-plus" style="font-size: 1.2em;"></i>
                             <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">Search Process
                             </h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
                             <ul style="list-style: none; padding: 0; margin: 0;">
                                 <li style="margin-bottom: 8px;"><strong>Name:</strong> الرقم المسجل علي السيستم</li>
                                 <li style="margin-bottom: 8px;"><strong>Action:</strong> ثم الضغط علي Search</li>
@@ -2438,16 +2200,13 @@
                     </div>
 
                     <!-- Card 2: Client Info & Contracts -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-file-contract" style="font-size: 1.2em;"></i>
                             <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">Info & Contracts
                             </h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
                             <ul style="list-style: none; padding: 0; margin: 0;">
                                 <li style="margin-bottom: 8px;"><strong>Information:</strong> الرقم القومي</li>
                                 <li style="margin-bottom: 8px;"><strong>Contracts:</strong> رقم الوحده</li>
@@ -2457,15 +2216,12 @@
                     </div>
 
                     <!-- Card 3: Call Details -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-phone-alt" style="font-size: 1.2em;"></i>
                             <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">Call Details</h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
                             <ul style="list-style: none; padding: 0; margin: 0;">
                                 <li style="margin-bottom: 8px;"><strong>Lead Channel:</strong> Call center</li>
                                 <li><strong>Call Phone:</strong> الرقم المتصل منه العميل</li>
@@ -2474,15 +2230,12 @@
                     </div>
 
                     <!-- Card 4: Status -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #ef4444, #b91c1c); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #ef4444, #b91c1c); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-thermometer-half" style="font-size: 1.2em;"></i>
                             <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">Status</h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
                             <ul style="list-style: none; padding: 0; margin: 0;">
                                 <li style="margin-bottom: 8px;"><strong>1=Open:</strong> لو هيتم تقديم طلب للعميل</li>
                                 <li><strong>2=Closed:</strong> لو تم الرد علي استفسار العميل في المكالمه</li>
@@ -2491,66 +2244,54 @@
                     </div>
 
                     <!-- Card 5: Type -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-list-ul" style="font-size: 1.2em;"></i>
                             <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">Type</h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
                             <ul style="list-style: none; padding: 0; margin: 0;">
-                                <li style="margin-bottom: 8px;"><strong>1=Buyer:</strong> لو العميل بيستفسر عن (الشراء /
-                                    الترشيحات)</li>
-                                <li style="margin-bottom: 8px;"><strong>2=Collection:</strong> لو العميل بيستفسر عن
-                                    (الاقساط)</li>
-                                <li><strong>3=Customer Service:</strong> لو العميل بيستفسر عن اي حاجه تاني غير (الشراء /
-                                    الترشيحات / الاقساط)</li>
+                                <li style="margin-bottom: 8px;"><strong>1=Buyer:</strong> لو العميل بيستفسر عن (الشراء / الترشيحات)
+                                </li>
+                                <li style="margin-bottom: 8px;"><strong>2=Collection:</strong> لو العميل بيستفسر عن (الاقساط)
+                                </li>
+                                <li><strong>3=Customer Service:</strong> لو العميل بيستفسر عن اي حاجه تاني غير (الشراء / الترشيحات / الاقساط)</li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Card 6: Call Type & Category -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #ec4899, #db2777); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #ec4899, #db2777); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-tags" style="font-size: 1.2em;"></i>
-                            <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">Call Type &
-                                Category</h3>
+                            <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">Call Type & Category
+                            </h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
                             <div style="margin-bottom: 5px; font-weight: bold;">Call Type:</div>
                             <ul style="list-style: none; padding: 0; margin: 0; margin-bottom: 10px;">
-                                <li style="margin-bottom: 5px;"><strong>1=Prices inquiries:</strong> لو العميل بيستفسر
-                                    عن الشراء</li>
+                                <li style="margin-bottom: 5px;"><strong>1=Prices inquiries:</strong> لو العميل بيستفسر عن الشراء</li>
                                 <li><strong>2=Others:</strong> لو العميل بيستفسر عن اي حاجه تاني غير الشراء</li>
                             </ul>
                             <div style="margin-bottom: 5px; font-weight: bold;">Ticket Category:</div>
                             <ul style="list-style: none; padding: 0; margin: 0;">
-                                <li style="margin-bottom: 5px;"><strong>1=General Sales:</strong> عندما يكون
-                                    type===buyer</li>
+                                <li style="margin-bottom: 5px;"><strong>1=General Sales:</strong> عندما يكون type===buyer
+                                </li>
                                 <li><strong>2=General CS:</strong> لاي حاجه تاني</li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Card 7: Subject & Comment & Project -->
-                    <div class="note-card"
-                        style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
-                        <div class="note-header"
-                            style="background: linear-gradient(135deg, #64748b, #475569); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                    <div class="note-card" style="background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s;">
+                        <div class="note-header" style="background: linear-gradient(135deg, #64748b, #475569); color: white; padding: 15px; display: flex; align-items: center; gap: 10px;">
                             <i class="fas fa-edit" style="font-size: 1.2em;"></i>
                             <h3 style="margin: 0; font-size: 1.1em; font-family: 'Cairo', sans-serif;">Specifics</h3>
                         </div>
-                        <div class="note-body"
-                            style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
+                        <div class="note-body" style="padding: 20px; font-family: 'Cairo', sans-serif; font-size: 1.1em; color: #475569; line-height: 1.8; text-align: right;">
                             <ul style="list-style: none; padding: 0; margin: 0;">
                                 <li style="margin-bottom: 8px;"><strong>Subject:</strong> موضوع المكالمه</li>
-                                <li style="margin-bottom: 8px;"><strong>Comment:</strong> الاستفسار الخاص بالعميل و ما
-                                    تم توضيحه للعميل</li>
+                                <li style="margin-bottom: 8px;"><strong>Comment:</strong> الاستفسار الخاص بالعميل و ما تم توضيحه للعميل</li>
                                 <li><strong>Project:</strong> Marina delta / Lagoons / Blue beach</li>
                                 <li><strong>Unit:</strong> رقم الوحده</li>
                             </ul>
@@ -2576,7 +2317,7 @@
                         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
                         /* ظل خفيف للوضوح */
                     }
-
+                    
                     .scenario-header {
                         background-color: #6130af;
                         color: #fff;
@@ -2588,37 +2329,37 @@
                         margin-bottom: 30px;
                         font-size: 1.5em;
                     }
-
+                    
                     .chat-container {
                         display: flex;
                         flex-direction: column;
                         gap: 20px;
                     }
-
+                    
                     .chat-row {
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
                         gap: 15px;
                     }
-
+                    
                     .chat-side {
                         display: flex;
                         align-items: center;
                         gap: 15px;
                         width: 48%;
                     }
-
                     /* الموظف على اليمين */
+                    
                     .agent-side {
                         justify-content: flex-start;
                     }
-
                     /* العميل على اليسار */
+                    
                     .client-side {
                         justify-content: flex-end;
                     }
-
+                    
                     .bubble {
                         background-color: #ddd9d9d7;
                         /* لون الفقاعة الرمادي الفاتح */
@@ -2635,17 +2376,17 @@
                         justify-content: center;
                         position: relative;
                     }
-
                     /* فقاعة الموظف (على اليمين) - بروز من اليمين العلوي */
+                    
                     .agent-bubble {
                         border-radius: 25px 0 25px 25px;
                     }
-
                     /* فقاعة العميل (على اليسار) - بروز من اليسار العلوي */
+                    
                     .client-bubble {
                         border-radius: 0 25px 25px 25px;
                     }
-
+                    
                     .avatar-chat {
                         width: 70px;
                         height: 70px;
@@ -2653,13 +2394,12 @@
                         -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
                         mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
                     }
-
+                    
                     @media (max-width: 768px) {
                         .chat-row {
                             flex-direction: column;
                             gap: 10px;
                         }
-
                         .chat-side {
                             width: 100%;
                         }
@@ -2675,8 +2415,7 @@
                             <!-- الموظف على اليمين -->
                             <div class="chat-side agent-side">
                                 <img src="Images/serviers.png" alt="Agent" class="avatar-chat">
-                                <div class="bubble agent-bubble">صباح الخير / مساء الخير دلتا كابيتال (اسم الموظف)
-                                    مع حضرتك
+                                <div class="bubble agent-bubble">صباح الخير / مساء الخير دلتا كابيتال (اسم الموظف) مع حضرتك
                                 </div>
                             </div>
                             <!-- العميل على اليسار -->
@@ -2694,10 +2433,8 @@
                             </div>
                             <!-- العميل على اليسار -->
                             <div class="chat-side client-side">
-                                <div class="bubble client-bubble" style="text-align: right;">(1) ممكن اعرف عن المشروع
-                                    الجديد اللي في الساحل الشرقي مشروع ايزلا , مشروع في المنصوره الجديده. المشروع بتاع
-                                    Nations of skay .<br> (2) ممكن اعرف عن مشاريع الشركة .<br> (3) ممكن اعرف عن الاسعار
-                                    والمساحات في مشروع <br> ( لاجونز - مارينا دلتا - ايزلا ) .
+                                <div class="bubble client-bubble" style="text-align: right;">(1) ممكن اعرف عن المشروع الجديد اللي في الساحل الشرقي مشروع ايزلا , مشروع في المنصوره الجديده. المشروع بتاع Nations of skay .<br> (2) ممكن اعرف عن مشاريع الشركة .<br> (3) ممكن اعرف عن الاسعار والمساحات في مشروع <br> ( لاجونز
+                                    - مارينا دلتا - ايزلا ) .
                                 </div>
 
                                 <img src="Images/client.png" alt="Client" class="avatar-chat">
@@ -2707,8 +2444,7 @@
                             <!-- الموظف على اليمين -->
                             <div class="chat-side agent-side">
                                 <img src="Images/serviers.png" alt="Agent" class="avatar-chat">
-                                <div class="bubble agent-bubble"> اكيد يا فندم هاساعد حضرتك طبعا ولكن اسمحلي في البداية
-                                    مراجعة بعض البيانات </div>
+                                <div class="bubble agent-bubble"> اكيد يا فندم هاساعد حضرتك طبعا ولكن اسمحلي في البداية مراجعة بعض البيانات </div>
                             </div>
                             <!-- العميل على اليسار -->
                             <div class="chat-side client-side">
@@ -2732,10 +2468,7 @@
                             <!-- الموظف على اليمين -->
                             <div class="chat-side agent-side">
                                 <img src="Images/serviers.png" alt="Agent" class="avatar-chat">
-                                <div class="bubble agent-bubble" style="text-align: right;"> اهلا وسهلا بحضرتك استاذ
-                                    احمد <br>
-                                    حضرتك وضحتلي عن استفسار بخصوص مشروع ايزلا الجديد استاذ احمد ( مشاريع الشركة ) & (
-                                    الاسعار والمساحات فس مشروع ( لاجونز - مارينا دلتا - ايزلا ) </div>
+                                <div class="bubble agent-bubble" style="text-align: right;"> اهلا وسهلا بحضرتك استاذ احمد <br> حضرتك وضحتلي عن استفسار بخصوص مشروع ايزلا الجديد استاذ احمد ( مشاريع الشركة ) & ( الاسعار والمساحات فس مشروع ( لاجونز - مارينا دلتا - ايزلا ) </div>
                             </div>
                             <!-- العميل على اليسار -->
                             <div class="chat-side client-side">
@@ -2743,10 +2476,8 @@
                                 <img src="Images/client.png" alt="Client" class="avatar-chat">
                             </div>
                         </div>
-                        <p
-                            style="    display: inline-block; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;font-weight: bold;color: #727272;text-align: center;background-color: #080808;padding: 10px;border-radius: 10px;">
-                            بعد الانتهاء من توضيح نبذه عن المشروع وتوضيح التفاصيل بيتم سؤال العميل عن الاتي لتسجيله علي
-                            السيستم </p>
+                        <p style="    display: inline-block; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;font-weight: bold;color: #727272;text-align: center;background-color: #080808;padding: 10px;border-radius: 10px;">
+                            بعد الانتهاء من توضيح نبذه عن المشروع وتوضيح التفاصيل بيتم سؤال العميل عن الاتي لتسجيله علي السيستم </p>
                         <div class="chat-row">
                             <!-- الموظف على اليمين -->
                             <div class="chat-side agent-side">
@@ -2775,9 +2506,7 @@
                             <!-- الموظف على اليمين -->
                             <div class="chat-side agent-side">
                                 <img src="Images/serviers.png" alt="Agent" class="avatar-chat">
-                                <div class="bubble agent-bubble"> استاذ احمد احب اوضح لحضرتك ان الاجراء اللي بيتاخد من
-                                    خلالي حاليا هو تسجيل طلب للمبيعات وبيتم التواصل مع حضرتك في خلال 24 ساعة كحد اقصي
-                                    لتوضيح كل التفاصيل اللي حضرتك محتاجها . </div>
+                                <div class="bubble agent-bubble"> استاذ احمد احب اوضح لحضرتك ان الاجراء اللي بيتاخد من خلالي حاليا هو تسجيل طلب للمبيعات وبيتم التواصل مع حضرتك في خلال 24 ساعة كحد اقصي لتوضيح كل التفاصيل اللي حضرتك محتاجها . </div>
                             </div>
 
                         </div>
@@ -2799,7 +2528,7 @@
 
     <!-- بحث الجدول في السكشن الثاني -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             var input = document.getElementById('table-search');
             var table = document.getElementById('data-table');
             if (!input || !table) return;
@@ -2817,20 +2546,20 @@
             }
 
             function clearHighlightsInRow(row) {
-                Array.from(row.cells).forEach(function (cell) {
+                Array.from(row.cells).forEach(function(cell) {
                     cell.innerHTML = cell.innerHTML.replace(/<span class="tbl-highlight">(.*?)<\/span>/g, '$1');
                 });
             }
 
             function highlightRow(row, term) {
                 var regex = new RegExp('(' + escapeRegExp(term) + ')', 'gi');
-                Array.from(row.cells).forEach(function (cell) {
+                Array.from(row.cells).forEach(function(cell) {
                     var html = cell.innerHTML.replace(/<span class=\"tbl-highlight\">(.*?)<\/span>/g, '$1');
                     cell.innerHTML = html.replace(regex, '<span class="tbl-highlight">$1<\/span>');
                 });
             }
 
-            input.addEventListener('input', function () {
+            input.addEventListener('input', function() {
                 var term = input.value.trim();
                 var rows = Array.from(tbody.querySelectorAll('tr'));
 
@@ -2843,9 +2572,9 @@
                 }
 
                 // إبراز المطابق ثم تحريك الصفوف المطابقة لأعلى الجدول مع الحفاظ على الترتيب النسبي
-                var enriched = rows.map(function (row, idx) {
+                var enriched = rows.map(function(row, idx) {
                     var anyCellMatched = false;
-                    Array.from(row.cells).forEach(function (cell) {
+                    Array.from(row.cells).forEach(function(cell) {
                         var original = cell.innerHTML.replace(/<span class=\"tbl-highlight\">(.*?)<\/span>/g, '$1');
                         var text = (cell.textContent || '');
                         if (text.toLowerCase().includes(term.toLowerCase())) {
@@ -2856,16 +2585,22 @@
                             cell.innerHTML = original;
                         }
                     });
-                    return { row: row, idx: idx, matched: anyCellMatched };
+                    return {
+                        row: row,
+                        idx: idx,
+                        matched: anyCellMatched
+                    };
                 });
 
-                enriched.sort(function (a, b) {
+                enriched.sort(function(a, b) {
                     if (a.matched === b.matched) return a.idx - b.idx; // ترتيب مستقر داخل كل مجموعة
                     return a.matched ? -1 : 1; // المطابق أولاً
                 });
 
                 var frag = document.createDocumentFragment();
-                enriched.forEach(function (e) { frag.appendChild(e.row); });
+                enriched.forEach(function(e) {
+                    frag.appendChild(e.row);
+                });
                 tbody.appendChild(frag);
             });
         });
@@ -2874,7 +2609,7 @@
     <!-- للسوال والجواب  -->
     <script>
         // سوال وجواب ولاوم اكتب اسم السكشن 
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             var searchInput = document.getElementById('faq-search');
             if (!searchInput) return;
             //////////////////////////////////////////////////// هنا
@@ -2902,9 +2637,9 @@
                 element.innerHTML = element.innerHTML.replace(/<span class="faq-highlight">(.*?)<\/span>/g, '$1');
             }
 
-            searchInput.addEventListener('input', function () {
+            searchInput.addEventListener('input', function() {
                 var val = searchInput.value.trim();
-                faqItems.forEach(function (item) {
+                faqItems.forEach(function(item) {
                     var q = item.querySelector('.faq-question span');
                     var a = item.querySelector('.faq-answer');
                     removeHighlight(q);
@@ -2928,7 +2663,7 @@
 
     <!-- للسوال والجواب (سكشن ٢ منفصل)  -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             var searchInput = document.getElementById('faq2-search');
             if (!searchInput) return;
 
@@ -2956,9 +2691,9 @@
                 element.innerHTML = element.innerHTML.replace(/<span class="faq2-highlight">(.*?)<\/span>/g, '$1');
             }
 
-            searchInput.addEventListener('input', function () {
+            searchInput.addEventListener('input', function() {
                 var val = searchInput.value.trim();
-                faqItems.forEach(function (item) {
+                faqItems.forEach(function(item) {
                     var q = item.querySelector('.faq-question span');
                     var a = item.querySelector('.faq-answer');
                     removeHighlight(q);
@@ -2983,7 +2718,7 @@
 
     <!-- بحث الملاحظات (System Notes) -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             var searchInput = document.getElementById('system-notes-search');
             if (!searchInput) return;
 
@@ -3011,9 +2746,9 @@
                 element.innerHTML = element.innerHTML.replace(new RegExp('<span class="' + highlightClass + '">(.*?)<\\/span>', 'g'), '$1');
             }
 
-            searchInput.addEventListener('input', function () {
+            searchInput.addEventListener('input', function() {
                 var val = searchInput.value.trim();
-                items.forEach(function (item) {
+                items.forEach(function(item) {
                     var header = item.querySelector('.note-header h3');
                     var body = item.querySelector('.note-body');
 
@@ -3040,7 +2775,7 @@
     </script>
     <!-- بحث Leads (System Leads) -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             var searchInput = document.getElementById('system-leads-search');
             if (!searchInput) return;
 
@@ -3068,9 +2803,9 @@
                 element.innerHTML = element.innerHTML.replace(new RegExp('<span class="' + highlightClass + '">(.*?)<\\/span>', 'g'), '$1');
             }
 
-            searchInput.addEventListener('input', function () {
+            searchInput.addEventListener('input', function() {
                 var val = searchInput.value.trim();
-                items.forEach(function (item) {
+                items.forEach(function(item) {
                     var header = item.querySelector('.note-header h3');
                     var body = item.querySelector('.note-body');
 
@@ -3097,7 +2832,7 @@
     </script>
     <!-- بحث Client (System Client) -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             var searchInput = document.getElementById('system-client-search');
             if (!searchInput) return;
 
@@ -3125,9 +2860,9 @@
                 element.innerHTML = element.innerHTML.replace(new RegExp('<span class="' + highlightClass + '">(.*?)<\\/span>', 'g'), '$1');
             }
 
-            searchInput.addEventListener('input', function () {
+            searchInput.addEventListener('input', function() {
                 var val = searchInput.value.trim();
-                items.forEach(function (item) {
+                items.forEach(function(item) {
                     var header = item.querySelector('.note-header h3');
                     var body = item.querySelector('.note-body');
 
